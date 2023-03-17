@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopaholic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
@@ -24,24 +25,81 @@
     </header>
     
     <!-- hero section -->
-    <section class="hero">
-        <p>New <span>Inspiration</span> 2023</p>
-        <h1>20% off on new season</h1>
-        <a href="shop.html">Browse collections</a>
+    <section class="hero bg-cover bg-center" style="background: url(images/bg1.jpg);">
+        <div class="container align-left py-5">
+            <p>New <span>Inspiration</span> 2023</p>
+            <h1>20% off on new season</h1>
+            <a href="shop.html">Browse collections</a>
+        </div>
     </section>
     <!-- comments -->
     
     
     <section class="catalog" id="catalog">
 
+        <header class="header">
+            <h2>Our <span>Products</span></h2>
+        </header>
+        <div class="product-container">
+            <div class="product">
+                <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/product-1.jpg">
+                </div>
+                <div class="content">
+                    <h3>Product name</h3>
+                    <div class="price">$123</div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-    <footer>
-        <ul>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>About</li>
-        </ul>
+    <section class="divider bg-cover bg-center bg-fixed" style="background: url(images/bg2.jpg);">
+        <div class="container align-right">
+            <p>New <span>Inspiration</span> 2023</p>
+            <h1>20% off on new season</h1>
+            <a href="shop.html">Browse collections</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white">
+        <div class="container">
+            <div>
+                <div>
+                    <h4>Customer services</h4>
+                    <ul class="link-unstyled">
+                        <li>Contact Us</li>
+                        <li>Help</li>
+                        <li>Online Stores</li>
+                        <li>Tern &amp; Conditions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Customer services</h4>
+                    <ul class="link-unstyled">
+                        <li>Contact Us</li>
+                        <li>Help</li>
+                        <li>Online Stores</li>
+                        <li>Tern &amp; Conditions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Social media</h4>
+                    <ul class="link-unstyled">
+                        <li><a href="https://twitter.com" target="_blank" class="footer-link"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://instagram.com" target="_blank" class="footer-link"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://facebook.com" target="_blank" class="footer-link"> <i class="fab fa-facebook-square"></i> Facebook</a></li>
+                        <li><a href="https://google.com" target="_blank" class="footer-link"><i class="fab fa-google-plus"></i> Google</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
     </footer>
 </body>
 
