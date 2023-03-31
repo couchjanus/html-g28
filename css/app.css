@@ -515,6 +515,7 @@ section {
 }
 .catalog .product-container .product {
     position: relative;
+    overflow: hidden;
 }
 .catalog .product-container .product .content{
     text-align: center;
@@ -532,11 +533,19 @@ section {
     width: 100%;
     overflow: hidden;
 }
+.image img, .icons, .icons a {
+    transition: all .4s;
+}
 
 .catalog .product-container .product .image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.product:hover .image img {
+    transform: scale(1.2);
+    filter: brightness(90%);
 }
 
 .catalog .product-container .product .content .price {
@@ -549,7 +558,12 @@ section {
     top: 1rem;
     right: 1rem;
     z-index: 10;
+    transform: translateX(10rem);
 
+}
+
+.catalog .product-container .product:hover .icons {
+    transform: translateX(0rem);
 }
 
 .catalog .product-container .product .icons a {
@@ -570,6 +584,10 @@ section {
 } 
 #catalog {
     /* id */
+}
+/* transitions */
+a, .btn {
+    transition: all 0.3s;
 }
 
 .header {
@@ -749,12 +767,20 @@ section {
     vertical-align: text-bottom;
     stroke: currentColor;
     stroke-width: 3;
+    transform: all .3s;
 }
 
 .svg-icon-big {
     width: 52px;
     height: 52px;
 }
+
+.svg-icon:hover {
+    stroke: red;
+    stroke-width: 3;
+    transform: scale(1.5);
+}
+
 table {
     border-collapse: collapse;
 }
@@ -796,10 +822,14 @@ table {
     font-size: 1rem;
     background-color: #fff;
     border: 1px solid #cdd4da;
+    transition: border-color .2s ease-in-out, 
+                box-shadow 0.2s ease-in-out;
+
 }
 
 .form-control:focus {
     border-color: salmon;
+    box-shadow: 0 0 0 .25rem rgba(229, 177, 74, .25);
 }
 
 .form-control::placeholder {
@@ -818,4 +848,68 @@ textarea.form-control {
     background-color: indigo;
     color: #fff;
     font-weight: 500;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.slide img {
+    object-fit: cover;
+}
+
+.carousel {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #fff;
+}
+
+.slider {
+    height: 100px;
+    margin: auto;
+    position: relative;
+    width: 960px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 14);
+    animation: scroll 40s linear infinite;
+}
+
+.slide, .slide img {
+    display: block;
+    height: 100px;
+    width: 250px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider::before, .slider::after {
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::before {
+    left: 0;
+    top:0;
+}
+.slider::after {
+    top:0;
+    right: 0;
+    transform: rotateZ(180deg);
 }
