@@ -42,6 +42,7 @@
     <header class="page-header flex-container">
         <a href="#" class="brand"><i class="fas fa-shopping-cart"></i> Shopaholic</a>
         <input type="checkbox" id="toggler">
+        <label for="toggler" class="btn-toggler"><i class="fas fa-bars"></i></label>
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="shop.html">Shop</a>
@@ -51,7 +52,7 @@
         <div class="toolbar">
             <a href="#"><i class="far fa-heart"></i></a>
             <a href="cart.html"><i class="fas fa-dolly-flatbed"></i></a>
-            <a href="#"><i class="far fa-user"></i></a>
+            <a onclick="window.login.showModal();"><i class="far fa-user"></i></a>
         </div>
     </header>
     
@@ -134,7 +135,7 @@
                 <div class="icons">
                     <a href="#" class="fas fa-shopping-cart"></a>
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
+                    <a href="#productView" class="fas fa-eye"></a>
                 </div>
                 <div class="image">
                     <div class="badge text-white bg-sale">Sale</div>
@@ -340,6 +341,67 @@
         </div>
         
     </footer>
+
+    <!-- modal window -->
+    <div class="modal" id="productView">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <a class="p-4 close btn-close" href="#"><i class="fas fa-times"></i></a>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="bg-cover bg-center d-block h-100" style="background:url(images/product-2.jpg)">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-4">
+                                <h2>Product Name</h2>
+                                <p>$123</p>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem, nam dolores nostrum reprehenderit maxime assumenda beatae ipsa! Obcaecati consequatur impedit id officiis eligendi quidem culpa nemo, dolores aliquam ut.</p>
+                                <div class="row mb-4">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex px-3 py-1">
+                                            <span class="text-uppercase mr-4">Quantity: </span>
+                                            <div class="quantity">
+                                                <i class="fas fa-caret-left"></i>
+                                                <input class="form-control" value="1">
+                                                <i class="fas fa-caret-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a class="btn btn-primary w-50" href="!#">To Cart</a>
+                                        <a class="btn btn-primary w-50" href="!#">To Wishlist</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <dialog id="login">
+        <form class="login-form">
+            <h3>sing in</h3>
+            <input type="email" placeholder="Enter Your Email" class="form-control">
+            <input type="password" placeholder="Enter Your Password" class="form-control">
+
+            <div class="remember">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Sign In">
+            <div class="links">
+                <a href="#" class="btn btn-link">Forget password</a>
+                <a href="#" class="btn btn-link">Sign Up</a>
+                <a  onclick="window.login.close();" class="btn btn-link">Close</a>
+            </div>
+        </form>
+    </dialog>
 </body>
 
 </html>

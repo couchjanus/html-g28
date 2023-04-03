@@ -66,6 +66,9 @@ h4 {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
 }
+.p-4 {
+    padding: 1.5rem !important;
+}
 .py-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
@@ -78,22 +81,26 @@ h4 {
     margin-left: 1.5rem;
 }
 .mb-0 {
-    padding-bottom: 0rem !important;
+    margin-bottom: 0rem !important;
 }
 .mb-1 {
-    padding-bottom: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
 }
 .mb-2 {
-    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
 }
 .mb-3 {
     margin-bottom: 1rem !important;
 }
 .mb-4 {
-    padding-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
+
+.mr-4 {
+    margin-right: 1.5rem;
+} 
 .mb-5 {
-    padding-bottom: 3rem !important;
+    margin-bottom: 3rem !important;
 }
 
 .page-header {
@@ -134,7 +141,9 @@ section {
 .navbar a:focus, .toolbar a:focus {
     color: var(--active-color);
 }
-
+#toggler, .btn-toggler {
+    display: none;
+}
 @media (max-width:768px) {
     .page-header .navbar {
         position: absolute;
@@ -147,6 +156,11 @@ section {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
+    .btn-toggler {
+        display: inline-block;
+        font-size: 2rem;
+    }
+    
     #toggler:checked ~ nav.navbar {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
@@ -912,4 +926,125 @@ textarea.form-control {
     top:0;
     right: 0;
     transform: rotateZ(180deg);
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.modal {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    margin: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+}
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-dialog {
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity input {
+    width: 3rem;
+    border: 0;
+}
+
+.btn-close {
+    width: 2rem;
+    height: 2rem;
+    padding: .5rem;
+    font-size: 2rem;
+    font-weight: 600;
+
+    position: absolute;
+    top:0;
+    right: 1.5rem;
+    z-index: 20;
+}
+
+.login-form {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.login-form h3 {
+    font-size: 2.5rem;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+}
+
+.remember label {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+#login {
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+}
+
+
+dialog::backdrop {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(55, 0, 0, .2),
+        rgba(55, 0, 0, .2) 1px,
+        rgba(55, 0, 0, .5) 1px,
+        rgba(55, 0, 0, .6) 20px,
+    );
 }
